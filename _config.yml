@@ -1,0 +1,33 @@
+title: Xinyu Bao
+description: Notes on software, AI, and things I learn.
+author: Xinyu Bao
+url: "https://aspadax.github.io"
+baseurl: ""
+lang: en
+timezone: Asia/Shanghai
+
+theme: minima
+github_username: AspadaX
+show_excerpts: true
+permalink: /:year/:month/:day/:title/
+
+header_pages:
+  - about.md
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Xinyu Bao
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
