@@ -1,0 +1,42 @@
+en:
+  name: Xinyu Bao
+  home: Home
+  skip: Skip to content
+  navigation: Main navigation
+  language: Language
+  eyebrow: Software, AI & open source
+  headline: Always learning.<br>Always building.
+  intro: I'm Xinyu, a software engineer interested in AI and open-source software.
+  about: This is where I share notes on what I build and learn — ideas, experiments, and things figured out along the way.
+  github: Find me on GitHub
+  articles: Articles
+  article_description: Notes from the workbench.
+  article_count: articles
+  empty: New notes are on the way.
+  topics: Topics
+  back: Back to all articles
+  footer: A place to think, build, and share.
+  not_found: Page not found
+  not_found_description: The page you're looking for doesn't exist.
+  back_home: Back to home
+zh-CN:
+  name: Xinyu Bao
+  home: 首页
+  skip: 跳到正文
+  navigation: 主导航
+  language: 语言
+  eyebrow: 软件、AI 与开源
+  headline: 不断学习。<br>不断创造。
+  intro: 我是 Xinyu，一名对 AI 和开源软件充满兴趣的软件工程师。
+  about: 在这里，记录我在构建与学习中的思考、实验，以及一路探索的心得。
+  github: 在 GitHub 上找到我
+  articles: 文章
+  article_description: 开发与学习中的点滴记录。
+  article_count: 篇文章
+  empty: 新的记录即将到来。
+  topics: 主题
+  back: 返回所有文章
+  footer: 思考、创造与分享。
+  not_found: 页面未找到
+  not_found_description: 你访问的页面不存在。
+  back_home: 返回首页

@@ -1,6 +1,6 @@
 # aspadax.github.io
 
-Personal Jekyll blog at <https://aspadax.github.io>. A minimal, monochrome design
+Personal Jekyll blog at <https://aspadax.github.io>. A dark, OpenAI-inspired monochrome design
 with local layouts, system fonts, and one plain CSS file. No theme or JavaScript
 is needed.
 
@@ -9,18 +9,20 @@ is needed.
 ```text
 _posts/         Published articles in English and Chinese
 _drafts/        Unpublished article template
-_layouts/       Shared page shell, article index, and post layout
+_layouts/       Shared page shell, homepage, and post layout
 assets/         main.css and any article images
 _config.yml     Site settings and post defaults
-index.md        Homepage
-articles.md     /articles/
-articles-zh.md  /cn/articles/
-about.md        /about/
+index.md        English homepage at /
+index-zh.md     Chinese homepage at /cn/
+_data/          English and Chinese interface copy
 404.html        Not-found page
 ```
 
-Pages live at the root; their `permalink` controls the public URL. Both article
-indexes group posts by language. Translation pairs link to one another.
+Pages live at the root; their `permalink` controls the public URL. Each homepage combines the biography and its language’s article list. The
+EN/CN switch changes the full interface and links to the matching translation
+when reading a post (or to the selected homepage if none exists). Language
+selection lives in the URL, so links are shareable and work without JavaScript.
+The former standalone About and Articles pages have been removed.
 
 ## Publish an article
 
@@ -52,7 +54,7 @@ appear only after a build on or after their publication date.
 - Edit `_config.yml` for the title, description, author, and GitHub username.
 - Edit `assets/main.css` for colors, typography, spacing, and responsive styles.
 - Edit `_layouts/default.html` for the shared navigation and footer.
-- Edit `about.md` for your biography.
+- Edit `_data/translations.yml` for the English and Chinese biography and interface copy.
 
 SEO metadata and RSS are supplied by `jekyll-seo-tag` and `jekyll-feed`.
 The English and Chinese articles imported from Techlab preserve their content,

@@ -1,19 +1,40 @@
+{% assign language = page.lang | default: site.lang %}
+{% assign t = site.data.translations[language] %}
+{% assign home_url = '/' %}
+{% if language == 'zh-CN' %}{% assign home_url = '/cn/' %}{% endif %}
+{% assign english_url = '/' %}
+{% assign chinese_url = '/cn/' %}
+{% if page.translation_key %}
+  {% assign translations = site.posts | where: 'translation_key', page.translation_key %}
+  {% for translation in translations %}
+    {% if translation.lang == 'zh-CN' %}{% assign chinese_url = translation.url %}{% else %}{% assign english_url = translation.url %}{% endif %}
+  {% endfor %}
+{% endif %}
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | escape }}">
+<html lang="{{ language | escape }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c0c0c">
+    <meta name="color-scheme" content="dark">
     {% seo %}
     {% feed_meta %}
+    {% if page.layout == 'home' or page.translation_key %}
+    <link rel="alternate" hreflang="en" href="{{ english_url | absolute_url }}">
+    <link rel="alternate" hreflang="zh-CN" href="{{ chinese_url | absolute_url }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">{{ t.skip }}</a>
     <header class="site-header shell">
-      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="{{ '/articles/' | relative_url }}"{% if page.layout == 'home' or page.layout == 'post' %} aria-current="{% if page.layout == 'home' %}page{% else %}true{% endif %}"{% endif %}>Articles</a>
-        <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
+      <a class="site-title" href="{{ home_url | relative_url }}" aria-label="{{ site.title | escape }} · {{ t.home }}">{{ site.title | escape }}<span class="site-mark" aria-hidden="true">✳</span></a>
+      <nav class="site-nav" aria-label="{{ t.navigation }}">
+        <a class="header-github" href="https://github.com/{{ site.github_username | escape }}">GitHub <span aria-hidden="true">↗</span></a>
+        <div class="language-switch" role="group" aria-label="{{ t.language }}">
+          <a href="{{ english_url | relative_url }}" lang="en" hreflang="en" aria-label="English"{% if language != 'zh-CN' %} aria-current="page"{% endif %}>EN</a>
+          <a href="{{ chinese_url | relative_url }}" lang="zh-CN" hreflang="zh-CN" aria-label="简体中文"{% if language == 'zh-CN' %} aria-current="page"{% endif %}>CN</a>
+        </div>
       </nav>
     </header>
     <main id="main" class="shell" tabindex="-1">
@@ -27,8 +48,8 @@
       {% endif %}
     </main>
     <footer class="site-footer shell">
-      <span>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</span>
-      <nav aria-label="Footer">
+      <div><span>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</span><p>{{ t.footer }}</p></div>
+      <nav aria-label="{% if language == 'zh-CN' %}页脚{% else %}Footer{% endif %}">
         <a href="https://github.com/{{ site.github_username | escape }}">GitHub <span aria-hidden="true">↗</span></a>
         <a href="{{ '/feed.xml' | relative_url }}">RSS <span aria-hidden="true">↗</span></a>
       </nav>
