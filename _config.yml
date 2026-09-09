@@ -6,13 +6,9 @@ baseurl: ""
 lang: en
 timezone: Asia/Shanghai
 
-theme: minima
 github_username: AspadaX
 show_excerpts: true
 permalink: /:year/:month/:day/:title/
-
-header_pages:
-  - about.md
 
 plugins:
   - jekyll-feed
@@ -25,6 +21,7 @@ defaults:
     values:
       layout: post
       author: Xinyu Bao
+      lang: en
 
 exclude:
   - README.md

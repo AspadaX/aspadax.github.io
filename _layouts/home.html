@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<div class="home">
+  <header class="home-header">
+    <p class="eyebrow">{% if page.lang == 'zh-CN' %}思考与实践{% else %}Ideas & experiments{% endif %}</p>
+    <h1>{{ page.title | default: "Articles" | escape }}</h1>
+    <p class="home-description">{% if page.lang == 'zh-CN' %}关于软件、AI，以及学习途中的点滴记录。{% else %}{{ site.description | escape }}{% endif %}</p>
+    <nav class="language-nav" aria-label="Article languages">
+      <a href="#english" lang="en">English <span aria-hidden="true">↓</span></a>
+      <a href="#chinese" lang="zh-CN">简体中文 <span aria-hidden="true">↓</span></a>
+    </nav>
+  </header>
+  {{ content }}
+  {% assign languages = "en,zh-CN" | split: "," %}
+  {% for language in languages %}
+    {% if language == 'zh-CN' %}
+      {% assign posts = site.posts | where: "lang", "zh-CN" %}
+      {% assign heading = "简体中文" %}
+      {% assign section_id = "chinese" %}
+    {% else %}
+      {% assign posts = site.posts | where_exp: "post", "post.lang != 'zh-CN'" %}
+      {% assign heading = "English" %}
+      {% assign section_id = "english" %}
+    {% endif %}
+    {% if posts.size > 0 %}
+    <section id="{{ section_id }}" lang="{{ language }}" class="article-section">
+      <div class="section-heading"><h2>{{ heading }}</h2><span>{{ posts.size }} {% if language == 'zh-CN' %}篇文章{% else %}articles{% endif %}</span></div>
+      <ul class="post-list">
+        {% for post in posts %}
+        <li>
+          <time class="post-meta" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <div class="post-summary">
+            <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }} <span aria-hidden="true">↗</span></a></h3>
+            {% if site.show_excerpts %}<p class="post-excerpt">{{ post.excerpt | strip_html | normalize_whitespace | truncate: 200 | escape }}</p>{% endif %}
+            {% if post.tags.size > 0 %}<ul class="post-tags" aria-label="Topics">{% for tag in post.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>{% endif %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  {% endfor %}
+</div>

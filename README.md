@@ -1,79 +1,75 @@
 # aspadax.github.io
 
-A minimal Jekyll blog using the GitHub Pages-supported Minima theme.
+Personal Jekyll blog at <https://aspadax.github.io>. A minimal, monochrome design
+with local layouts, system fonts, and one plain CSS file. No theme or JavaScript
+is needed.
 
-Site address: <https://aspadax.github.io>
+## Structure
 
-## Enable GitHub Pages once
+```text
+_posts/         Published articles in English and Chinese
+_drafts/        Unpublished article template
+_layouts/       Shared page shell, article index, and post layout
+assets/         main.css and any article images
+_config.yml     Site settings and post defaults
+index.md        Homepage
+articles.md     /articles/
+articles-zh.md  /cn/articles/
+about.md        /about/
+404.html        Not-found page
+```
 
-Open [Settings → Pages](https://github.com/AspadaX/aspadax.github.io/settings/pages).
-Under **Build and deployment**, set:
+Pages live at the root; their `permalink` controls the public URL. Both article
+indexes group posts by language. Translation pairs link to one another.
 
-- **Source:** Deploy from a branch
-- **Branch:** main
-- **Folder:** / (root)
+## Publish an article
 
-Click **Save**. GitHub will build and publish the site. Check the repository's
-**Actions** tab for the build result. No custom workflow is needed.
+Add `_posts/YYYY-MM-DD-your-title.md`:
 
-## Publish a new article from GitHub
+```markdown
+---
+title: "Your post title"
+---
 
-1. Open the [_posts folder](https://github.com/AspadaX/aspadax.github.io/tree/main/_posts).
-2. Choose **Add file → Create new file**.
-3. Name it `YYYY-MM-DD-your-post-title.md`, using the publication date.
-4. Add the following, replacing the title and article text:
+Your opening paragraph becomes the article preview.
 
-   ```markdown
-   ---
-   title: "Your post title"
-   ---
+## A section heading
 
-   Your opening paragraph.
+Write the rest in Markdown.
+```
 
-   ## A section heading
+The layout, author, and English language default come from `_config.yml`.
+For Chinese articles add `lang: zh-CN`. Give translations the same
+`translation_key` to link them. Add images under `assets/images/` and reference
+them with `![Description](/assets/images/example.png)`.
 
-   The rest of your article goes here.
-   ```
-
-5. Commit the file to `main`. GitHub Pages rebuilds the blog automatically
-   once Pages is enabled.
-
-The post layout and author are supplied by `_config.yml`, so only `title` is
-required in the front matter. Keep the opening and closing `---` lines.
-The homepage lists posts newest first and shows each opening paragraph.
-Future-dated posts are hidden until a build runs on or after their date;
-there is no scheduled rebuild configured.
-
-## Drafts and images
-
-- Use `_drafts/post-template.md` as a starting point. Drafts do not appear on
-  the published site. Move a finished draft into `_posts` and give it the
-  dated filename above to publish it.
-- This repository is public: draft source files are still visible on GitHub.
-- Upload images to `assets/images/`, then embed them in an article with
-  `![Description of the image](/assets/images/example.png)`.
-- The initial `hello-world` post can be edited or deleted at any time.
+Start a draft in `_drafts/`, then move it into `_posts/` with a dated filename to
+publish. Draft source remains public in this repository. Future-dated posts
+appear only after a build on or after their publication date.
 
 ## Customize
 
-- `_config.yml`: site title, description, author, GitHub link, and settings.
-- `about.md`: the About page.
-- `_posts/`: published articles.
+- Edit `_config.yml` for the title, description, author, and GitHub username.
+- Edit `assets/main.css` for colors, typography, spacing, and responsive styles.
+- Edit `_layouts/default.html` for the shared navigation and footer.
+- Edit `about.md` for your biography.
 
-## Optional local preview
+SEO metadata and RSS are supplied by `jekyll-seo-tag` and `jekyll-feed`.
+The English and Chinese articles imported from Techlab preserve their content,
+publication dates, original `.html` URLs, and `source_url` metadata.
 
-Install Ruby and Bundler, then run from this directory:
+## Preview and deploy
+
+Install Ruby and Bundler, then run:
 
 ```sh
 bundle install
 bundle exec jekyll serve
 ```
 
-Open <http://localhost:4000>. To preview drafts, use
-`bundle exec jekyll serve --drafts`. Restart the server after changing
-`_config.yml`.
+Open <http://localhost:4000>. Add `--drafts` to preview drafts. Restart the server
+after editing `_config.yml`. Run `bundle exec jekyll build` for a production build.
 
-For a production build, run `bundle exec jekyll build`.
-
-See [GitHub's Jekyll guide](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll)
-for the supported setup.
+In [Settings → Pages](https://github.com/AspadaX/aspadax.github.io/settings/pages),
+select **Deploy from a branch**, **main**, and **/ (root)**. Commits to `main`
+then rebuild the site automatically; no custom workflow is needed.
