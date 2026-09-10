@@ -1,7 +1,7 @@
 # aspadax.github.io
 
-Personal Jekyll blog at <https://aspadax.github.io>. A dark, OpenAI-inspired monochrome design
-with local layouts, system fonts, and one plain CSS file. No theme or JavaScript
+Personal Jekyll blog at <https://aspadax.github.io>. A minimal dark design with a short biography, a compact article list,
+local layouts, system fonts, and one plain CSS file. No theme or JavaScript
 is needed.
 
 ## Structure
@@ -43,7 +43,9 @@ Write the rest in Markdown.
 The layout, author, and English language default come from `_config.yml`.
 For Chinese articles add `lang: zh-CN`. Give translations the same
 `translation_key` to link them. Add images under `assets/images/` and reference
-them with `![Description](/assets/images/example.png)`.
+them with `![Description](/assets/images/example.png)`. Publish diagrams as static
+SVG images so they remain readable without JavaScript. Exclude working article
+sources at the repository root from the site in `_config.yml`.
 
 Start a draft in `_drafts/`, then move it into `_posts/` with a dated filename to
 publish. Draft source remains public in this repository. Future-dated posts

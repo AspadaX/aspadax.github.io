@@ -7,15 +7,14 @@ layout: default
 {% if language == 'zh-CN' %}{% assign home_url = '/cn/' %}{% endif %}
 <article class="post h-entry reading-width" itemscope itemtype="http://schema.org/BlogPosting" lang="{{ page.lang | default: site.lang }}">
   <header class="post-header">
-    <a class="back-link" href="{{ home_url | relative_url }}#articles">← {{ t.back }}</a>
+    <a class="back-link" href="{{ home_url | relative_url }}#articles">{{ t.back }}</a>
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{% if language == 'zh-CN' %}{{ page.date | date: '%Y年%-m月%-d日' }}{% else %}{{ page.date | date: '%b %-d, %Y' }}{% endif %}</time>
       {% if page.author %} · <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>{% endif %}
     </p>
-    {% if page.tags.size > 0 %}<ul class="post-tags" aria-label="{{ t.topics }}">{% for tag in page.tags %}<li>{{ tag | escape }}</li>{% endfor %}</ul>{% endif %}
   </header>
   <div class="post-content e-content" itemprop="articleBody">{{ content }}</div>
-  <footer class="post-end"><a href="{{ home_url | relative_url }}#articles">← {{ t.back }}</a></footer>
+  <footer class="post-end"><a href="{{ home_url | relative_url }}#articles">{{ t.back }}</a></footer>
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>

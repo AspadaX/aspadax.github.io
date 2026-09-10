@@ -28,9 +28,9 @@
   <body>
     <a class="skip-link" href="#main">{{ t.skip }}</a>
     <header class="site-header shell">
-      <a class="site-title" href="{{ home_url | relative_url }}" aria-label="{{ site.title | escape }} · {{ t.home }}">{{ site.title | escape }}<span class="site-mark" aria-hidden="true">✳</span></a>
+      <a class="site-title" href="{{ home_url | relative_url }}" aria-label="{{ site.title | escape }} · {{ t.home }}">{{ site.title | escape }}</a>
       <nav class="site-nav" aria-label="{{ t.navigation }}">
-        <a class="header-github" href="https://github.com/{{ site.github_username | escape }}">GitHub <span aria-hidden="true">↗</span></a>
+        <a class="header-github" href="https://github.com/{{ site.github_username | escape }}">GitHub</a>
         <div class="language-switch" role="group" aria-label="{{ t.language }}">
           <a href="{{ english_url | relative_url }}" lang="en" hreflang="en" aria-label="English"{% if language != 'zh-CN' %} aria-current="page"{% endif %}>EN</a>
           <a href="{{ chinese_url | relative_url }}" lang="zh-CN" hreflang="zh-CN" aria-label="简体中文"{% if language == 'zh-CN' %} aria-current="page"{% endif %}>CN</a>
@@ -48,10 +48,9 @@
       {% endif %}
     </main>
     <footer class="site-footer shell">
-      <div><span>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</span><p>{{ t.footer }}</p></div>
+      <span>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</span>
       <nav aria-label="{% if language == 'zh-CN' %}页脚{% else %}Footer{% endif %}">
-        <a href="https://github.com/{{ site.github_username | escape }}">GitHub <span aria-hidden="true">↗</span></a>
-        <a href="{{ '/feed.xml' | relative_url }}">RSS <span aria-hidden="true">↗</span></a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
       </nav>
     </footer>
   </body>

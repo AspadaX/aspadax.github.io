@@ -28,3 +28,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - opennote-block-design-revised.md

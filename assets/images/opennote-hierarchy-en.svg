@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 310" role="img" aria-labelledby="title" lang="en">
+<title id="title">Collection → Notebook A → Notebook B → Note 1 → Note 2 → Note 3</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a0a0a0"/></marker></defs>
+<path d="M360,72 L240,126" fill="none" stroke="#a0a0a0" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M360,72 L555,126" fill="none" stroke="#a0a0a0" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M240,176 L110,230" fill="none" stroke="#a0a0a0" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M240,176 L335,230" fill="none" stroke="#a0a0a0" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M555,176 L555,230" fill="none" stroke="#a0a0a0" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="260" y="28" width="200" height="44" rx="3" fill="#181818" stroke="#666"/><text x="360" y="56" text-anchor="middle" fill="#f2f2f2" font-family="system-ui, sans-serif" font-size="17">Collection</text>
+<rect x="140" y="132" width="200" height="44" rx="3" fill="#181818" stroke="#666"/><text x="240" y="160" text-anchor="middle" fill="#f2f2f2" font-family="system-ui, sans-serif" font-size="17">Notebook A</text>
+<rect x="455" y="132" width="200" height="44" rx="3" fill="#181818" stroke="#666"/><text x="555" y="160" text-anchor="middle" fill="#f2f2f2" font-family="system-ui, sans-serif" font-size="17">Notebook B</text>
+<rect x="10" y="236" width="200" height="44" rx="3" fill="#181818" stroke="#666"/><text x="110" y="264" text-anchor="middle" fill="#f2f2f2" font-family="system-ui, sans-serif" font-size="17">Note 1</text>
+<rect x="235" y="236" width="200" height="44" rx="3" fill="#181818" stroke="#666"/><text x="335" y="264" text-anchor="middle" fill="#f2f2f2" font-family="system-ui, sans-serif" font-size="17">Note 2</text>
+<rect x="455" y="236" width="200" height="44" rx="3" fill="#181818" stroke="#666"/><text x="555" y="264" text-anchor="middle" fill="#f2f2f2" font-family="system-ui, sans-serif" font-size="17">Note 3</text>
+</svg>
