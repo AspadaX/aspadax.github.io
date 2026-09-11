@@ -1,5 +1,5 @@
 ---
-title: "How a Tree Simplified OpenNote's Data Model"
+title: "Everything Is a Block: Simplifying a Note-Taking Data Model"
 date: "2026-09-10 00:00:00 +0800"
 lang: en
 permalink: /articles/posts/opennote-block-design.html

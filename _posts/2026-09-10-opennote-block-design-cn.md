@@ -1,5 +1,5 @@
 ---
-title: "树结构如何简化 OpenNote 的数据模型"
+title: "一切皆为块：简化笔记应用的数据模型"
 date: "2026-09-10 00:00:00 +0800"
 lang: zh-CN
 permalink: /cn/articles/posts/opennote-block-design.html
