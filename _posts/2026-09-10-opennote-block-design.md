@@ -7,7 +7,7 @@ translation_key: opennote-block-design
 description: "How a shared Block model and parent relationships replaced OpenNote's fixed collection–notebook–note hierarchy."
 ---
 
-When I first designed OpenNote, I started with a familiar hierarchy: collections contained notebooks, and notebooks contained notes. I did not think carefully enough about what those distinctions would mean for the data model.
+When I first designed [OpenNote](https://github.com/opennote-org/opennote), I started with a familiar hierarchy: collections contained notebooks, and notebooks contained notes. I did not think carefully enough about what those distinctions would mean for the data model.
 
 ![A collection contains Notebook A and Notebook B. Notebook A contains Note 1 and Note 2; Notebook B contains Note 3.]({{ '/assets/images/opennote-hierarchy-en.svg' | relative_url }})
 

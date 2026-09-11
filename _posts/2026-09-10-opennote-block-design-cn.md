@@ -7,7 +7,7 @@ translation_key: opennote-block-design
 description: "用统一的 Block 模型和父子关系，替代 OpenNote 中固定的集合、笔记本、笔记三层结构。"
 ---
 
-最初设计 OpenNote 时，我采用了一种熟悉的层级结构：集合包含笔记本，笔记本包含笔记。当时，我没有仔细想过这些区分会给数据模型带来什么影响。
+最初设计 [OpenNote](https://github.com/opennote-org/opennote) 时，我采用了一种熟悉的层级结构：集合包含笔记本，笔记本包含笔记。当时，我没有仔细想过这些区分会给数据模型带来什么影响。
 
 ![集合包含笔记本 A 和笔记本 B；笔记本 A 包含笔记 1、笔记 2，笔记本 B 包含笔记 3。]({{ '/assets/images/opennote-hierarchy-cn.svg' | relative_url }})
 
