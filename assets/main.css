@@ -28,6 +28,7 @@ h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); letter-spacing: -.025em; }
 .site-header { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
 .site-title { font-size: 1.125rem; font-weight: 500; text-decoration: none; }
 .site-nav, .site-footer nav { display: flex; align-items: center; gap: 1.5rem; }
+.site-footer nav { flex-wrap: wrap; }
 .site-nav a, .site-footer a { font-size: .8125rem; text-decoration: none; }
 .site-nav a:hover, .site-footer a:hover { text-decoration: underline; }
 .language-switch { display: flex; gap: .75rem; }

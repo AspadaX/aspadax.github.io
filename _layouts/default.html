@@ -50,6 +50,9 @@
     <footer class="site-footer shell">
       <span>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</span>
       <nav aria-label="{% if language == 'zh-CN' %}页脚{% else %}Footer{% endif %}">
+        {% if site.icp_registration %}
+        <a href="https://beian.miit.gov.cn/" lang="zh-CN">{{ site.icp_registration | escape }}</a>
+        {% endif %}
         <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
       </nav>
     </footer>
